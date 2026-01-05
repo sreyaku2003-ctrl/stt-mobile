@@ -3,7 +3,5 @@ services:
     name: stt-app
     env: python
     pythonVersion: 3.11.8
-    buildCommand: |
-      apt-get update && apt-get install -y ffmpeg
-      pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --workers 2 --threads 4 --timeout 180
