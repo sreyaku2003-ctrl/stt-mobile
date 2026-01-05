@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Azure Speech Service credentials
-AZURE_SPEECH_KEY = os.getenv('AZURE_SPEECH_KEY', 'e99111621cee4a7ea292xxxxxxxxxxxx')
+AZURE_SPEECH_KEY = os.getenv('AZURE_SPEECH_KEY')
 AZURE_REGION = os.getenv('AZURE_REGION', 'centralindia')
 
 # Check if ffmpeg is available
@@ -436,3 +436,4 @@ if __name__ == '__main__':
     print("="*60 + "\n")
     
     app.run(debug=True, port=port, host='0.0.0.0', threaded=True)
+
