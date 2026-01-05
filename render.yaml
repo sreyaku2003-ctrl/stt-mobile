@@ -2,6 +2,6 @@ services:
   - type: web
     name: stt-app
     env: python
-    pythonVersion: 3.11.8
+    pythonVersion: 3.11
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --workers 2 --threads 4 --timeout 180
