@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import azure.cognitiveservices.speech as speechsdk
 import os
 import tempfile
@@ -8,7 +9,7 @@ import subprocess
 import shutil
 
 app = Flask(__name__)
-
+CORS(app)
 from dotenv import load_dotenv
 load_dotenv()
 
