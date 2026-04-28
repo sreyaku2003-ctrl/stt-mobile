@@ -34,11 +34,11 @@ def convert_to_wav_ffmpeg(input_path, request_id):
         # FFmpeg command to convert to 16kHz, 16-bit, mono WAV
         cmd = [
             'ffmpeg',
+            '-y',                    # Overwrite output (put BEFORE -i)
             '-i', input_path,
-            '-ar', '16000',          # Sample rate 16kHz
+            '-ar', '16000',          # 16kHz sample rate
             '-ac', '1',              # Mono
-            '-sample_fmt', 's16',    # 16-bit
-            '-y',                    # Overwrite output
+            '-c:a', 'pcm_s16le',     # ✅ correct 16-bit PCM encoder (not -sample_fmt)
             output_path
         ]
         
